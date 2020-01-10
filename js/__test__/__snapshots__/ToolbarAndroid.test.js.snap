@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToolbarAndroid /> renders ToolbarAndroid with icon 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignSelf": "flex-start",
+        "borderColor": "red",
+        "borderWidth": 1,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`<ToolbarAndroid /> renders ToolbarAndroid with title 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignSelf": "flex-start",
+        "borderColor": "red",
+        "borderWidth": 1,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`<ToolbarAndroid /> renders enabled ToolbarAndroid 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignSelf": "flex-start",
+        "borderColor": "red",
+        "borderWidth": 1,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
