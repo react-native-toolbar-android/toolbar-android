@@ -34,6 +34,10 @@ macos_defaults: &macos_defaults
   macos:
     xcode: "10.1.0"
 
+# Example
+at-example-61: &at-example-61 
+  working_directory: ~/toolbar-android/example/ToolbarAndroidExample-061
+
 # -------------------------
 #         ALIASES
 # -------------------------
@@ -101,7 +105,9 @@ jobs:
           cd example/ToolbarAndroidExample-061
           rm -rf node_modules
           yarn cache clean
-          yarn install --network-concurrency 1 --non-interactive --cache-folder ~/.cache/yarn & wait
+
+          # do not use cache-folder as it trigger yarn integrity failure due to our file-based package
+          yarn install --network-concurrency 1 --non-interactive & wait
     - persist_to_workspace:
         root: .
         paths: .
