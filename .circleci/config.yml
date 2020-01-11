@@ -101,7 +101,7 @@ jobs:
           cd example/ToolbarAndroidExample-061
           rm -rf node_modules
           yarn cache clean
-    -run: *yarn
+    - run: *yarn
     - persist_to_workspace:
         root: .
         paths: .
