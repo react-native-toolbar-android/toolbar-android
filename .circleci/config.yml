@@ -104,10 +104,11 @@ jobs:
         command: |-
           cd example/ToolbarAndroidExample-061
           rm -rf node_modules
-          yarn cache clean
 
-          # do not use cache-folder as it trigger yarn integrity failure due to our file-based package
-          yarn install --network-concurrency 1 --non-interactive & wait
+          # to avoid yarn integrity failure due to our file-based package installation
+          rm yarn.lock
+          yarn cache clean
+          yarn install --network-concurrency 1 --non-interactive --cache-folder ~/.cache/yarn & wait
     - persist_to_workspace:
         root: .
         paths: .
