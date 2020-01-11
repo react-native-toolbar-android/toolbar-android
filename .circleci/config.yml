@@ -52,11 +52,11 @@ aliases:
 
 - &restore-gradle-cache
   keys:
-  - gradle-cache-{{ checksum "android/build.gradle" }}-{{ checksum "example/android/build.gradle" }}-{{ checksum "example/android/app/build.gradle" }}
+  - gradle-cache-{{ checksum "android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-061/android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-061/android/app/build.gradle" }}
 - &save-gradle-cache
   paths:
   - ~/.gradle
-  key: gradle-cache-{{ checksum "android/build.gradle" }}-{{ checksum "example/android/build.gradle" }}-{{ checksum "example/android/app/build.gradle" }}
+  key: gradle-cache-{{ checksum "android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-061/android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-061/android/app/build.gradle" }}
 
 # INSTALLATION
 - &yarn
@@ -75,7 +75,7 @@ aliases:
 
 - &jest
   name: Jest Unit Tests
-  command: yarn test:js
+  command: yarn test:jest
 
 # -------------------------
 #          JOBS
@@ -129,9 +129,9 @@ jobs:
           yes | sdkmanager --licenses || exit 0
           yes | sdkmanager --update || exit 0
     - run:
-        name: Build Android Example App and Library
+        name: Build Android Example App and Library (RN61)
         command: |-
-          cd example/android
+          cd example/ToolbarAndroidExample-061/android
           ./gradlew clean assembleDebug
     - save-cache: *save-gradle-cache
   
@@ -154,9 +154,9 @@ jobs:
     - attach_workspace:
         at: ~/toolbar-android
     - run:
-        name: Build example app
+        name: Build example app (RN61)
         command: |-
-          react-native run-ios --project-path example/ios
+          react-native run-ios --project-path example/ToolbarAndroidExample-061/ios
 
 # -------------------------
 #        WORKFLOWS
