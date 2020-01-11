@@ -34,6 +34,10 @@ macos_defaults: &macos_defaults
   macos:
     xcode: "10.1.0"
 
+# Example
+at-example-61: &at-example-61 
+  working_directory: ~/toolbar-android/example/ToolbarAndroidExample-061
+
 # -------------------------
 #         ALIASES
 # -------------------------
@@ -88,10 +92,23 @@ jobs:
     steps:
     - checkout
     - restore-cache: *restore-yarn-cache
-    - run: rm -rf node_modules
-    - run: yarn cache clean
+    - run: 
+        name: Checkout project root
+        command: |-
+          rm -rf node_modules
+          yarn cache clean
     - run: *yarn
     - save-cache: *save-yarn-cache
+    - run:
+        name: Checkout Example (RN61) 
+        command: |-
+          cd example/ToolbarAndroidExample-061
+          rm -rf node_modules
+
+          # to avoid yarn integrity failure due to our file-based package installation
+          rm yarn.lock
+          yarn cache clean
+          yarn install --network-concurrency 1 --non-interactive --cache-folder ~/.cache/yarn & wait
     - persist_to_workspace:
         root: .
         paths: .
@@ -117,7 +134,7 @@ jobs:
         at: ~/toolbar-android
     - run: *jest
   
-  android-compile:
+  example-61-android-compile:
     <<: *android_defaults
     steps:
     - attach_workspace:
@@ -129,34 +146,26 @@ jobs:
           yes | sdkmanager --licenses || exit 0
           yes | sdkmanager --update || exit 0
     - run:
-        name: Build Android Example App and Library (RN61)
+        name: Build Android Example App (RN61)
         command: |-
           cd example/ToolbarAndroidExample-061/android
           ./gradlew clean assembleDebug
     - save-cache: *save-gradle-cache
-  
-  ios-checkout:
-    <<: *macos_defaults
-    steps:
-    - checkout
-    - restore-cache: *restore-yarn-cache
-    - run: rm -rf node_modules
-    - run: yarn cache clean
-    - run: *yarn
-    - save-cache: *save-yarn-cache
-    - persist_to_workspace:
-        root: .
-        paths: .
 
-  ios-compile:
+  example-61-ios:
     <<: *macos_defaults
     steps:
     - attach_workspace:
         at: ~/toolbar-android
     - run:
-        name: Build example app (RN61)
+        name: Build iOS example app (RN61)
         command: |-
-          react-native run-ios --project-path example/ToolbarAndroidExample-061/ios
+          cd example/ToolbarAndroidExample-061/ios 
+          rm -rf Prods
+          pod install
+          cd ..
+          yarn ios
+          # react-native run-ios --project-path example/ToolbarAndroidExample-061/ios
 
 # -------------------------
 #        WORKFLOWS
@@ -175,7 +184,7 @@ workflows:
     - jest:
         requires:
         - linux-checkout
-    - android-compile:
+    - example-61-android-compile:
         requires:
         - linux-checkout
 # Disabled until we have macOS containers enabled        
