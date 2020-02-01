@@ -1,6 +1,6 @@
 {
   "name": "@react-native-community/toolbar-android",
-  "version": "0.1.0",
+  "version": "0.1.0-rc.0",
   "description": "A React Native Component for Android Toolbar",
   "keywords": [
     "toolbar-android",
@@ -10,7 +10,7 @@
   "homepage": "https://github.com/react-native-community/toolbar-android#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/react-native-community/toolbar-android.git"
+    "url": "git+https://github.com/react-native-community/toolbar-android.git"
   },
   "license": "MIT",
   "author": "Connectdotz <vsun@connectdotz.com>",
@@ -34,8 +34,10 @@
   },
   "jest": {
     "preset": "react-native",
-    "testPathIgnorePatterns": ["/node_modules/", "/example/"]
-
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/example/"
+    ]
   },
   "dependencies": {},
   "devDependencies": {
@@ -65,5 +67,12 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/react-native-community/toolbar-android/issues"
+  },
+  "directories": {
+    "doc": "doc",
+    "example": "example"
   }
 }
