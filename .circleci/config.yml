@@ -81,6 +81,11 @@ aliases:
   name: Jest Unit Tests
   command: yarn test:jest
 
+- &tsc
+  name: TypeScript Checks
+  command: yarn test:tsc
+
+
 # -------------------------
 #          JOBS
 # -------------------------
@@ -133,7 +138,15 @@ jobs:
     - attach_workspace:
         at: ~/toolbar-android
     - run: *jest
-  
+
+  tsc:
+    <<: *linux_defaults
+    steps:
+    - attach_workspace:
+        at: ~/toolbar-android
+    - run: *tsc
+
+
   example-61-android-compile:
     <<: *android_defaults
     steps:
@@ -182,6 +195,9 @@ workflows:
         requires:
         - linux-checkout
     - jest:
+        requires:
+        - linux-checkout
+    - tsc:
         requires:
         - linux-checkout
     - example-61-android-compile:

@@ -1,6 +1,5 @@
+import {NativeModules} from 'react-native';
 
-import { NativeModules } from 'react-native';
-
-const { RNCReactNativeToolbarAndroid } = NativeModules;
+const {RNCReactNativeToolbarAndroid} = NativeModules;
 
 export default RNCReactNativeToolbarAndroid;
