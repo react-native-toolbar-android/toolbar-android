@@ -18,6 +18,10 @@ const instructions = Platform.select({
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu!',
 });
+const initialMessage = Platform.select({
+  ios: 'Toolbar-Android is no-op in iOS',
+  android: 'Click on the toolbar icons above to test...',
+});
 
 type Props = {};
 type State = {
@@ -27,7 +31,7 @@ export default class ToolbarAndroidExample extends Component<Props, State> {
   constructor(props: any) {
     super(props);
 
-    this.state = {message: 'to test, click the toolbar icons...'};
+    this.state = {message: initialMessage};
   }
 
   render() {

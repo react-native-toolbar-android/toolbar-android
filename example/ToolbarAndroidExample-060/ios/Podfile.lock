@@ -81,7 +81,7 @@ PODS:
   - React-RCTWebSocket (0.60.0):
     - React-Core (= 0.60.0)
     - React-fishhook (= 0.60.0)
-  - toolbar-android (0.1.0):
+  - toolbar-android (0.1.0-rc.1):
     - React
   - yoga (0.60.0.React)
 
@@ -185,7 +185,7 @@ SPEC CHECKSUMS:
   React-RCTText: 685fca2e13b024271048e7e247ef24476f28a41e
   React-RCTVibration: 4ee1cf208ab17a50fafb1c16ffe28fe594a64e4f
   React-RCTWebSocket: fca087d583724aa0e5fef7d911f0f2a28d0f2736
-  toolbar-android: 267152522a180118ca7f934507e100be8dd9fe08
+  toolbar-android: 31a94ebb180739afddf652103b3025d31ad3f1a6
   yoga: 616fde658be980aa60a2158835170f3f9c2d04b4
 
 PODFILE CHECKSUM: a65ac831c7271ee3f1e305b4c361cc85f544957d
