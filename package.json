@@ -25,13 +25,6 @@
     "test:jest": "jest",
     "test:tsc":"tsc --noEmit"
   },
-  "prettier": {
-    "bracketSpacing": false,
-    "jsxBracketSameLine": true,
-    "parser": "flow",
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
   "jest": {
     "preset": "react-native",
     "testPathIgnorePatterns": [
