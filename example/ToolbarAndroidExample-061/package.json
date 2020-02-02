@@ -10,7 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@react-native-community/toolbar-android": "file:../../react-native-community-toolbar-android-0.1.0.tgz",
+    "@react-native-community/toolbar-android": "file:../../react-native-community-toolbar-android-0.1.0-rc.1.tgz",
     "react": "16.9.0",
     "react-native": "0.61.5"
   },
