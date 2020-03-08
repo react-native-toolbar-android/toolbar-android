@@ -3,11 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "sync": "../scripts/update-local-pkg.sh ../..",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@react-native-community/toolbar-android": "file:../../react-native-community-toolbar-android-0.1.0-rc.1.tgz",
+    "@react-native-community/toolbar-android": "file:../../react-native-community-toolbar-android-current.tgz",
     "react": "16.8.6",
     "react-native": "0.60.0"
   },
