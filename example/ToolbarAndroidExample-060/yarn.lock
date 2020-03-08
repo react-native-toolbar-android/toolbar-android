@@ -928,9 +928,9 @@
     eslint-plugin-react-native "3.6.0"
     prettier "1.16.4"
 
-"@react-native-community/toolbar-android@file:../../react-native-community-toolbar-android-0.1.0-rc.1.tgz":
+"@react-native-community/toolbar-android@file:../../react-native-community-toolbar-android-current.tgz":
   version "0.1.0-rc.1"
-  resolved "file:../../react-native-community-toolbar-android-0.1.0-rc.1.tgz#5cd8451295628d6a5f87b2e6c162a94c0124de8d"
+  resolved "file:../../react-native-community-toolbar-android-current.tgz#d88a050f13df0c50eb03bb2e993d1ebbf6483751"
 
 "@types/babel__core@^7.1.0":
   version "7.1.3"
