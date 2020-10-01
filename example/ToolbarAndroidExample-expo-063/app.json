@@ -1,0 +1,12 @@
+{
+  "name": "ToolbarAndroidExample-expo-063",
+  "displayName": "ToolbarAndroidExample-expo-063",
+  "expo": {
+    "name": "ToolbarAndroidExample-expo-063",
+    "slug": "ToolbarAndroidExample-expo-063",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
