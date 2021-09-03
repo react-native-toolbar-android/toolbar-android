@@ -18,7 +18,7 @@ linux_defaults: &linux_defaults
 android_defaults: &android_defaults
   <<: *defaults
   docker:
-  - image: circleci/android:api-29
+  - image: circleci/android:api-29-node
   resource_class: "medium"
   environment:
   - TERM: "dumb"
