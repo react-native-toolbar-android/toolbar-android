@@ -162,6 +162,8 @@ jobs:
         command: |-
           cd example/ToolbarAndroidExample-065/android
           pwd
+          ls -l ../node_modules/
+          ls -l ../node_modules/@react-native-community/cli-platform-android
           ls -l ../node_modules/@react-native-community/cli-platform-android/native_modules.gradle
           ./gradlew clean assembleDebug
     - save-cache: *save-gradle-cache
