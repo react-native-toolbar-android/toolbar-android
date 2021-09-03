@@ -35,8 +35,8 @@ macos_defaults: &macos_defaults
     xcode: "10.1.0"
 
 # Example
-at-example-61: &at-example-61 
-  working_directory: ~/toolbar-android/example/ToolbarAndroidExample-061
+at-example-65: &at-example-65 
+  working_directory: ~/toolbar-android/example/ToolbarAndroidExample-065
 
 # -------------------------
 #         ALIASES
@@ -56,11 +56,11 @@ aliases:
 
 - &restore-gradle-cache
   keys:
-  - gradle-cache-{{ checksum "android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-061/android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-061/android/app/build.gradle" }}
+  - gradle-cache-{{ checksum "android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-065/android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-065/android/app/build.gradle" }}
 - &save-gradle-cache
   paths:
   - ~/.gradle
-  key: gradle-cache-{{ checksum "android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-061/android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-061/android/app/build.gradle" }}
+  key: gradle-cache-{{ checksum "android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-065/android/build.gradle" }}-{{ checksum "example/ToolbarAndroidExample-065/android/app/build.gradle" }}
 
 # INSTALLATION
 - &yarn
@@ -105,9 +105,9 @@ jobs:
     - run: *yarn
     - save-cache: *save-yarn-cache
     - run:
-        name: Checkout Example (RN61) 
+        name: Checkout Example (RN65) 
         command: |-
-          cd example/ToolbarAndroidExample-061
+          cd example/ToolbarAndroidExample-065
           rm -rf node_modules
           yarn cache clean
 
@@ -146,7 +146,7 @@ jobs:
     - run: *tsc
 
 
-  example-61-android-compile:
+  example-65-android-compile:
     <<: *android_defaults
     steps:
     - attach_workspace:
@@ -158,26 +158,26 @@ jobs:
           yes | sdkmanager --licenses || exit 0
           yes | sdkmanager --update || exit 0
     - run:
-        name: Build Android Example App (RN61)
+        name: Build Android Example App (RN65)
         command: |-
-          cd example/ToolbarAndroidExample-061/android
+          cd example/ToolbarAndroidExample-065/android
           ./gradlew clean assembleDebug
     - save-cache: *save-gradle-cache
 
-  example-61-ios:
+  example-65-ios:
     <<: *macos_defaults
     steps:
     - attach_workspace:
         at: ~/toolbar-android
     - run:
-        name: Build iOS example app (RN61)
+        name: Build iOS example app (RN65)
         command: |-
-          cd example/ToolbarAndroidExample-061/ios 
+          cd example/ToolbarAndroidExample-065/ios 
           rm -rf Prods
           pod install
           cd ..
           yarn ios
-          # react-native run-ios --project-path example/ToolbarAndroidExample-061/ios
+          # react-native run-ios --project-path example/ToolbarAndroidExample-065/ios
 
 # -------------------------
 #        WORKFLOWS
@@ -199,7 +199,7 @@ workflows:
     - tsc:
         requires:
         - linux-checkout
-    - example-61-android-compile:
+    - example-65-android-compile:
         requires:
         - linux-checkout
 # Disabled until we have macOS containers enabled        

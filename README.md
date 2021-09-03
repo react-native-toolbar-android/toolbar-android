@@ -27,6 +27,8 @@ npx pod-install
 react-native link @react-native-community/toolbar-android
 ```
 
+ Note: `@react-native-community/toolbar-android@0.2.0` supports `react-native@0.65` and up. For earlier version of react-native, please use `@react-native-community/toolbar-android@0.1.0-rc2` 
+ 
 ### Manual installation
 
 <details>
