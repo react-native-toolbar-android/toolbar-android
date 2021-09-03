@@ -130,7 +130,7 @@ public class ReactToolbar extends Toolbar {
       return null;
     }
 
-    @Override
+    // to be compatible with RN-0.65/fresco-2.5
     public Map<String, Object> getExtras() {
       return null;
     }

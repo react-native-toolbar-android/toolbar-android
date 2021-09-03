@@ -1167,8 +1167,8 @@
   integrity sha512-W/J0fNYVO01tioHjvYWQ9m6RgndVtbElzYozBq1ZPrHO/iCzlqoySHl4gO/fpCl9QEFjvJfjPgtPMTMlsoq5DQ==
 
 "@react-native-community/toolbar-android@file:../../react-native-community-toolbar-android-current.tgz":
-  version "0.1.0-rc.2"
-  resolved "file:../../react-native-community-toolbar-android-current.tgz#1a14dfbbd72b0cd57e9ad2ecd2c8e1c9dfd415f9"
+  version "0.2.0"
+  resolved "file:../../react-native-community-toolbar-android-current.tgz#4d5daa9ca756c0f465db44766dfbbf9aa38f6730"
 
 "@react-native/assets@1.0.0":
   version "1.0.0"
