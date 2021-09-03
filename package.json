@@ -1,6 +1,6 @@
 {
   "name": "@react-native-community/toolbar-android",
-  "version": "0.1.0-rc.2",
+  "version": "0.2.0",
   "description": "A React Native Component for Android Toolbar",
   "keywords": [
     "toolbar-android",
