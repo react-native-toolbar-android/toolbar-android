@@ -10,7 +10,7 @@ defaults: &defaults
 linux_defaults: &linux_defaults
   <<: *defaults
   docker:
-  - image: circleci/node:8
+  - image: circleci/node:12
   environment:
   - PATH: "/opt/yarn/yarn-v1.5.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
@@ -18,7 +18,7 @@ linux_defaults: &linux_defaults
 android_defaults: &android_defaults
   <<: *defaults
   docker:
-  - image: circleci/android:api-27-node8-alpha
+  - image: circleci/android:api-29
   resource_class: "medium"
   environment:
   - TERM: "dumb"
@@ -161,10 +161,6 @@ jobs:
         name: Build Android Example App (RN65)
         command: |-
           cd example/ToolbarAndroidExample-065/android
-          pwd
-          ls -l ../node_modules/
-          ls -l ../node_modules/@react-native-community/cli-platform-android
-          ls -l ../node_modules/@react-native-community/cli-platform-android/native_modules.gradle
           ./gradlew clean assembleDebug
     - save-cache: *save-gradle-cache
 
