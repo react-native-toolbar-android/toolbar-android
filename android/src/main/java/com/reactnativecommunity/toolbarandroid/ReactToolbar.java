@@ -7,6 +7,7 @@
 
 package com.reactnativecommunity.toolbarandroid;
 
+import java.util.Map;
 import android.content.Context;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
@@ -126,6 +127,11 @@ public class ReactToolbar extends Toolbar {
 
     @Override
     public QualityInfo getQualityInfo() {
+      return null;
+    }
+
+    @Override
+    public Map<String, Object> getExtras() {
       return null;
     }
 
