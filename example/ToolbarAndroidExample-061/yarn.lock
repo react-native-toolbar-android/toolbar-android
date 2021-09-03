@@ -949,8 +949,8 @@
     prettier "1.16.4"
 
 "@react-native-community/toolbar-android@file:../../react-native-community-toolbar-android-current.tgz":
-  version "0.1.0-rc.1"
-  resolved "file:../../react-native-community-toolbar-android-current.tgz#d88a050f13df0c50eb03bb2e993d1ebbf6483751"
+  version "0.2.0"
+  resolved "file:../../react-native-community-toolbar-android-current.tgz#77d7a9981bc9d01cd00954b39460a17e06d24573"
 
 "@types/babel__core@^7.1.0":
   version "7.1.3"

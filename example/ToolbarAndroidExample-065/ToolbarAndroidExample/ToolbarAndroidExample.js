@@ -39,7 +39,7 @@ export default class ToolbarAndroidExample extends Component<Props, State> {
       <View style={styles.container}>
         <ToolbarAndroid
           navIcon={require('./ic_menu_black_24dp.png')}
-          title="ToolbarAndroid Example"
+          title="ToolbarAndroid Example (RN-0.65)"
           style={styles.toolbar}
           actions={[
             {title: 'Button', icon: require('./relay.png'), show: 'always'},
